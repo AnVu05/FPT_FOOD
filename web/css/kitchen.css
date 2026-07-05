@@ -1,0 +1,300 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jan 30, 2026, 6:46:21 PM
+    Author     : AN
+*/
+/* CSS CƠ BẢN */
+:root {
+    --primary: #ff6600;
+    --bg-page: #f5f7fa;
+    --text-dark: #333;
+}
+body {
+    background-color: var(--bg-page);
+    color: var(--text-dark);
+    font-family: "Segoe UI", sans-serif;
+    margin: 0;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* HEADER & NAV */
+header {
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    padding: 15px 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.main-nav {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.nav-pill {
+    padding: 10px 25px;
+    border-radius: 30px;
+    background: #e9ecef;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.nav-pill:hover {
+    background: #ddd;
+}
+.nav-pill.active {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 4px 10px rgba(255, 102, 0, 0.3);
+}
+
+/* SECTIONS (ẨN/HIỆN) */
+.section-content {
+    display: none;
+    animation: fadeIn 0.3s;
+}
+.section-content.active {
+    display: block;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- [MỚI] STYLE CHO SUB-NAV (THANH LỌC ĐƠN HÀNG) --- */
+.tabs-container {
+    background: white;
+    border-radius: 30px;
+    padding: 5px;
+    display: inline-flex;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+}
+.sub-tab-btn {
+    padding: 8px 20px;
+    border: none;
+    background: transparent;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #666;
+    transition: 0.3s;
+}
+.sub-tab-btn.active {
+    background: #eee;
+    color: var(--text-dark);
+}
+
+/* ORDER STYLES */
+.order-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+.order-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid var(--primary);
+}
+.btn-action {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.btn-receive {
+    background: #ff6600;
+}
+.btn-done {
+    background: #28a745;
+}
+
+/* RECIPES STYLES */
+.recipe-layout {
+    display: flex;
+    gap: 20px;
+    min-height: 500px;
+}
+.sidebar {
+    width: 300px;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+}
+.content {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+.food-item {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.food-item.active {
+    background: #fff5f0;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* TOGGLE SWITCH */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 18px;
+}
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+input:checked + .slider {
+    background-color: #28a745;
+}
+input:checked + .slider:before {
+    transform: translateX(16px);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+/* MODAL STYLES */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.modal.active {
+    display: flex;
+}
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 400px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+.modal-footer {
+    text-align: right;
+    margin-top: 20px;
+}
+.btn-cancel {
+    background: #eee;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.btn-confirm {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* INVENTORY */
+.inv-card {
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border-left: 4px solid #28a745;
+    display: inline-block;
+    width: 48%;
+}
+/* --- [THÊM MỚI] Style cho nút Upload CSV --- */
+.btn-upload-csv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #fff5f0; 
+    color: var(--primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btn-upload-csv:hover {
+    background-color: var(--primary); 
+    color: white;                     
+    box-shadow: 0 3px 8px rgba(255, 102, 0, 0.4);
+    transform: translateY(-2px);
+}

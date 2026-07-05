@@ -1,0 +1,616 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jan 30, 2026, 6:46:14 PM
+    Author     : AN
+*/
+/* giữ y chang CSS của bạn */
+:root{
+    --primary:#ff6600;
+    --bg-light:#f9f9f9;
+    --text-dark:#333;
+    --border-radius:12px;
+    --shadow:0 4px 12px rgba(0,0,0,0.05);
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+}
+body{
+    background-color:#fff;
+    color:var(--text-dark);
+    padding-bottom:80px;
+    overflow-x:hidden;
+}
+.container{
+    max-width:1200px;
+    margin:0 auto;
+    padding:20px;
+}
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+.logo{
+    color:var(--primary);
+    font-size:24px;
+    font-weight:800;
+}
+.nav-tabs{
+    display:flex;
+    background:#f0f0f0;
+    border-radius:30px;
+    padding:4px;
+    margin-bottom:20px;
+}
+.nav-item{
+    flex:1;
+    text-align:center;
+    padding:12px;
+    border-radius:25px;
+    cursor:pointer;
+    font-weight:600;
+    color:#777;
+    transition:.3s;
+}
+.nav-item.active{
+    background:white;
+    color:var(--text-dark);
+    box-shadow:0 2px 5px rgba(0,0,0,0.05);
+}
+.view-section{
+    display:none;
+    animation:fadeIn .3s;
+}
+.view-section.active{
+    display:block;
+}
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(10px)
+    }
+    to{
+        opacity:1;
+        transform:translateY(0)
+    }
+}
+.search-box{
+    position:relative;
+    margin-bottom:20px;
+}
+.search-box input{
+    width:100%;
+    padding:14px 20px 14px 45px;
+    border-radius:var(--border-radius);
+    border:none;
+    background:#f5f5f5;
+    outline:none;
+}
+.search-box i{
+    position:absolute;
+    left:15px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#aaa;
+}
+.categories{
+    display:flex;
+    gap:12px;
+    overflow-x:auto;
+    padding-bottom:10px;
+    margin-bottom:20px;
+    scrollbar-width:none;
+}
+.cat-chip{
+    white-space:nowrap;
+    padding:10px 24px;
+    background:#f5f5f5;
+    border-radius:25px;
+    font-weight:500;
+    cursor:pointer;
+    transition:.2s;
+    border:none;
+}
+.cat-chip.active{
+    background:var(--primary);
+    color:white;
+}
+.food-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+    gap:24px;
+}
+.food-card{
+    border:1px solid #eee;
+    border-radius:var(--border-radius);
+    overflow:hidden;
+    background:white;
+    transition:.2s;
+    display:flex;
+    flex-direction:column;
+    cursor:pointer;
+}
+.food-img{
+    width:100%;
+    height:180px;
+    overflow:hidden;
+}
+
+.food-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.food-card:hover{
+    transform:translateY(-5px);
+    box-shadow:var(--shadow);
+}
+.food-img-placeholder{
+    height:180px;
+    width:100%;
+    background:#fff5f0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#ffccaa;
+    transition:.3s;
+}
+.food-card:hover .food-img-placeholder{
+    background:#ffe0cc;
+    color:var(--primary);
+}
+.food-icon{
+    font-size:60px;
+}
+.card-body{
+    padding:15px;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+.price{
+    color:var(--primary);
+    font-weight:bold;
+    font-size:16px;
+}
+.btn-add{
+    background:var(--primary);
+    color:white;
+    border:none;
+    padding:8px 16px;
+    border-radius:6px;
+    cursor:pointer;
+    z-index:2;
+    position:relative;
+}
+.history-card{
+    background:white;
+    border:1px solid #eee;
+    border-radius:12px;
+    padding:20px;
+    margin-bottom:15px;
+}
+.history-header{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:10px;
+    border-bottom:1px solid #f9f9f9;
+    padding-bottom:10px;
+}
+.order-status{
+    padding:4px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+}
+.status-pending{
+    background:#e9ecef;
+    color:#495057;
+}
+.status-cooking{
+    background:#fff3cd;
+    color:#856404;
+}
+.status-done{
+    background:#d4edda;
+    color:#155724;
+}
+.status-paid{
+    background:#cce5ff;
+    color:#004085;
+}
+.history-items{
+    font-size:14px;
+    color:#555;
+    margin-bottom:10px;
+}
+.history-footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-weight:bold;
+    font-size:16px;
+    color:var(--primary);
+}
+.btn-review-sm{
+    font-size:12px;
+    padding:5px 10px;
+    background:white;
+    border:1px solid var(--primary);
+    color:var(--primary);
+    border-radius:4px;
+    cursor:pointer;
+    margin-left:10px;
+}
+.cart-overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.5);
+    z-index:100;
+    opacity:0;
+    visibility:hidden;
+    transition:.3s;
+}
+.cart-sidebar{
+    position:fixed;
+    top:0;
+    right:-400px;
+    width:380px;
+    max-width:90%;
+    height:100%;
+    background:white;
+    z-index:101;
+    padding:20px;
+    transition:.3s;
+    display:flex;
+    flex-direction:column;
+}
+.cart-open .cart-overlay{
+    opacity:1;
+    visibility:visible;
+}
+.cart-open .cart-sidebar{
+    right:0;
+}
+.cart-items{
+    flex:1;
+    overflow-y:auto;
+    margin-top:15px;
+}
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:15px;
+    border-bottom:1px solid #f9f9f9;
+    padding-bottom:10px;
+    align-items:center;
+}
+.qty-controls{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-top:5px;
+}
+.btn-qty{
+    width:24px;
+    height:24px;
+    border:1px solid #ddd;
+    background:white;
+    border-radius:4px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+    color:#555;
+    transition:.2s;
+}
+.btn-qty:hover{
+    background:#f0f0f0;
+    color:var(--primary);
+    border-color:var(--primary);
+}
+.qty-text{
+    font-weight:600;
+    font-size:14px;
+    min-width:20px;
+    text-align:center;
+}
+.voucher-section{
+    background:#f8f9fa;
+    padding:10px;
+    border-radius:8px;
+    margin-top:10px;
+    display:flex;
+    gap:5px;
+}
+.voucher-input{
+    border:1px solid #ddd;
+    padding:8px;
+    border-radius:4px;
+    flex:1;
+    outline:none;
+}
+.btn-apply{
+    background:#333;
+    color:white;
+    border:none;
+    padding:0 15px;
+    border-radius:4px;
+    cursor:pointer;
+}
+.cart-footer{
+    margin-top:auto;
+    border-top:1px solid #eee;
+    padding-top:15px;
+}
+.btn-checkout{
+    width:100%;
+    padding:12px;
+    background:var(--primary);
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:10px;
+}
+.modal{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.6);
+    z-index:200;
+    display:none;
+    align-items:center;
+    justify-content:center;
+}
+.modal.active{
+    display:flex;
+    animation:fadeIn .3s;
+}
+.modal-content{
+    background:white;
+    width:500px;
+    max-width:95%;
+    max-height:90vh;
+    border-radius:12px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+}
+.modal-header{
+    padding:15px;
+    border-bottom:1px solid #eee;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-weight:bold;
+    font-size:18px;
+}
+.modal-body{
+    padding:20px;
+    overflow-y:auto;
+}
+.review-item{
+    margin-bottom:15px;
+    padding-bottom:15px;
+    border-bottom:1px solid #f5f5f5;
+}
+.review-user{
+    font-weight:bold;
+    font-size:13px;
+    margin-bottom:2px;
+}
+.review-stars{
+    color:#ffc107;
+    font-size:12px;
+    margin-bottom:5px;
+}
+.review-text{
+    font-size:14px;
+    color:#555;
+}
+.review-input{
+    width:100%;
+    border:1px solid #ddd;
+    border-radius:8px;
+    padding:10px;
+    outline:none;
+    margin-bottom:12px;
+}
+.star-rating-input{
+    display:flex;
+    gap:5px;
+    margin-bottom:15px;
+    font-size:24px;
+    color:#ddd;
+    cursor:pointer;
+}
+.star-rating-input i.active{
+    color:#ffc107;
+}
+.fab-cart{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    width:60px;
+    height:60px;
+    background:var(--primary);
+    color:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:24px;
+    box-shadow:0 5px 20px rgba(255,102,0,.4);
+    cursor:pointer;
+    border:none;
+    z-index:90;
+}
+.cart-count{
+    position:absolute;
+    top:-5px;
+    right:-5px;
+    background:red;
+    color:white;
+    font-size:12px;
+    padding:4px 8px;
+    border-radius:10px;
+    border:2px solid white;
+}
+/* Xóa class .food-img-placeholder cũ đi nếu không dùng nữa */
+
+.food-img-container {
+    width: 100%;
+    height: 150px; /* Chiều cao cố định cho ảnh */
+    overflow: hidden;
+    border-top-left-radius: 8px; /* Bo góc trên cho khớp với thẻ card */
+    border-top-right-radius: 8px;
+}
+
+.food-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Giúp ảnh tự cắt cho vừa khung mà không bị méo */
+    transition: transform 0.3s ease;
+}
+
+/* Hiệu ứng zoom nhẹ khi di chuột vào */
+.food-card:hover .food-img {
+    transform: scale(1.1);
+}
+
+.nav-tabs a {
+    text-decoration: none;
+}
+
+.tab-btn {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 12px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #666;
+    white-space: nowrap;
+    text-align: center;
+    display: block;
+}
+
+.tab-btn.active {
+    background: white;
+    color: var(--text-dark);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.history-container {
+    padding: 20px;
+    background-color: #fcfcfc;
+    border-radius: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.history-title {
+    color: #d35400; /* Màu cam ấm phù hợp với nhà hàng */
+    font-size: 24px;
+    border-bottom: 2px solid #ffccbc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.empty-order-msg {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+    padding: 30px;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px dashed #ccc;
+}
+.orders-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Tự động xuống dòng, responsive */
+    gap: 20px;
+}
+.order-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    padding: 20px;
+    border: 1px solid #f0f0f0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.order-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed #e0e0e0;
+    padding-bottom: 12px;
+    margin-bottom: 15px;
+}
+.order-header h4 {
+    margin: 0;
+    color: #333;
+    font-size: 18px;
+}
+.order-time {
+    color: #777;
+    font-size: 13px;
+}
+.order-status {
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+.status-badge {
+    background-color: #e8f5e9;
+    color: #2e7d32; /* Màu xanh lá thể hiện sự tích cực */
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-block;
+}
+.order-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+    background: #fafafa;
+    border-radius: 8px;
+    padding: 10px;
+}
+.order-items li {
+    padding: 8px 0;
+    color: #555;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+}
+.order-items li:last-child {
+    border-bottom: none;
+}
+.order-total {
+    text-align: right;
+    font-size: 18px;
+    color: #d35400; /* Cùng tông màu với tiêu đề */
+    padding-top: 15px;
+    border-top: 2px solid #f0f0f0;
+    margin: 0;
+}

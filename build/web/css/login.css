@@ -1,0 +1,142 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jan 30, 2026, 6:45:57 PM
+    Author     : AN
+*/
+
+/* --- GIỮ NGUYÊN CSS --- */
+:root {
+    --primary: #ff6600;
+    --bg-page: #fff5f0;
+    --text-dark: #333;
+    --text-gray: #777;
+    --input-bg: #f3f4f6;
+    --radius: 8px;
+    --danger: #dc3545;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background-color: var(--bg-page);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.logo-circle {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 15px;
+    color: white;
+    font-size: 24px;
+}
+
+h2 {
+    color: var(--primary);
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.subtitle {
+    color: var(--text-gray);
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid transparent;
+    background-color: var(--input-bg);
+    border-radius: var(--radius);
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    background-color: white;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.1);
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.2s;
+    border: none;
+    margin-bottom: 10px;
+}
+
+.btn-login {
+    background-color: var(--primary);
+    color: white;
+}
+.btn-login:hover {
+    background-color: #e65c00;
+}
+
+.btn-register {
+    background-color: white;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+}
+.btn-register:hover {
+    background-color: #fff0e6;
+}
+
+.error-message {
+    display: block;
+    margin-top: 12px;
+    padding: 10px;
+
+    background-color: #ffecec;
+    border: 1px solid #ffb3b3;
+    border-radius: 6px;
+
+    color: #d8000c;
+    font-size: 14px;
+    text-align: center;
+}

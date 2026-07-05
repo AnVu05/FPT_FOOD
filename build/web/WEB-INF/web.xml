@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <filter>
+        <filter-name>AuthenFilter</filter-name>
+        <filter-class>controller.AuthenFilter</filter-class>
+    </filter>
+    Manager 
+    <filter-mapping>
+        <filter-name>AuthenFilter</filter-name>
+        <url-pattern>/dashboardController</url-pattern>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>AuthenFilter</filter-name>
+        <url-pattern>/dashboard.jsp</url-pattern>
+    </filter-mapping>
+
+    Worker 
+    <filter-mapping>
+        <filter-name>AuthenFilter</filter-name>
+        <url-pattern>/kitchen.jsp</url-pattern>
+    </filter-mapping>
+
+    User 
+    <filter-mapping>
+        <filter-name>AuthenFilter</filter-name>
+        <url-pattern>/homeController</url-pattern>
+    </filter-mapping>
+
+    <!--    <filter-mapping>
+        <filter-name>AuthenFilter</filter-name>
+        <url-pattern>/home.jsp</url-pattern>
+    </filter-mapping>-->
+    <servlet>
+        <servlet-name>MainController</servlet-name>
+        <servlet-class>controller.MainController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ingredientController</servlet-name>
+        <servlet-class>controller.ingredientController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>orderController</servlet-name>
+        <servlet-class>controller.orderController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>recipesController</servlet-name>
+        <servlet-class>controller.recipesController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>foodController</servlet-name>
+        <servlet-class>controller.foodController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MainController</servlet-name>
+        <url-pattern>/MainController</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>
+            login.jsp
+        </welcome-file>
+    </welcome-file-list>
+    <servlet-mapping>
+        <servlet-name>ingredientController</servlet-name>
+        <url-pattern>/ingredientController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>orderController</servlet-name>
+        <url-pattern>/orderController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>recipesController</servlet-name>
+        <url-pattern>/recipesController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>foodController</servlet-name>
+        <url-pattern>/foodController</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>

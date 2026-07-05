@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="lib1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/lib/javax.mail.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/lib/jstl-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/lib/jstl-impl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/lib/lombok-1.18.30.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/lib/commons-email-1.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/lib/sqljdbc42.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
